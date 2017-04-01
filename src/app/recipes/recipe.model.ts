@@ -1,12 +1,16 @@
+import { Ingredient } from './../shared/ingredient.model';
+
 export class Recipe {
     private _name: string;
     private _description: string;
     private _imagePath: string;
+    private _ingredients: Ingredient[];
 
-    constructor(name: string, desc: string, imagePath: string) {
+    constructor(name: string, desc: string, imagePath: string, ingredients: Ingredient[]) {
         this._name = name;
         this._description = desc;
         this._imagePath = imagePath;
+        this._ingredients = ingredients;
     }
 
     public get name(): string {
@@ -28,5 +32,9 @@ export class Recipe {
     }
     public set imagePath(v: string) {
         this._imagePath = v;
+    }
+
+    public get ingredients(): Ingredient[] {
+        return this._ingredients.slice();
     }
 }
