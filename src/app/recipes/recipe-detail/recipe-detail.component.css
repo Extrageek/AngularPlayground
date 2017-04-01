@@ -1,3 +1,7 @@
 img {
     max-height: 10vh;
 }
+
+a {
+    cursor: pointer;
+}
